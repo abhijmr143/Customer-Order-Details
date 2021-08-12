@@ -1,0 +1,15 @@
+{% extends "myApps/home.html" %}
+
+{% block title %}
+  <title>Graph</title>
+{% endblock title %}
+
+{% block content %}
+
+<a href="/"><button type="submit">Back to Main View</button></a>
+
+    {% if chart %}
+      <img src="data:image/png; base64, {{chart|safe}}" alt="" srcset="">
+    {% endif %}
+
+{% endblock content %}

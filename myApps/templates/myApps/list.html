@@ -1,0 +1,26 @@
+{% extends "myApps/home.html" %}
+
+{% block title %}
+  <title>List</title>
+{% endblock title %}
+
+
+{% block content %}
+
+<a href="{% url 'myApps:create'%}"><button type="submit">Create New List</button></a>
+<a href="{% url 'myApps:graph'%}"><button type="submit">Graphical View</button></a>
+
+{% for data in data %}
+    <hr>
+      <ul>
+          <li>Customer ID: {{data.id}}</li> 
+          <li>Customer: {{data.customer}}</li>
+          <li>Products: {{data.products}}</li>
+          <li>Sales_Order: {{data.order_sales}}</li>
+          <a href="{% url 'myApps:update' data.id%}"><button type="submit">Update</button></a>
+          <a href="{% url 'myApps:delete' data.id%}"><button type="submit">Delete</button></a>
+          
+        
+      </ul>
+    {% endfor %}
+{% endblock content %}

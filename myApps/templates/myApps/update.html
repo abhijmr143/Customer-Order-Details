@@ -1,0 +1,16 @@
+{% extends "myApps/home.html" %}
+
+{% block title %}
+  <title>update List</title>
+{% endblock title %}
+
+
+{% block content %}
+  
+<form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Update</button>
+</form>
+
+{% endblock content %}
